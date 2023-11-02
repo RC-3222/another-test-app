@@ -54,7 +54,7 @@
         color: $clr-black;
 
         span {
-            @include fonts(1.6875, 600, 2.3125rem);
+            @include fonts(1.6875rem, 600, 2.3125rem);
         }
     }
 }
