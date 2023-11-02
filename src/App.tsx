@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import styles from './app.module.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { ResultSection } from './components/sections/result-section';
+import { QuestionSection } from './components/sections/question-section';
+
+export const App = () => {
+
+    const [isQuizCompleted, setIsQuizCompleted] = useState(false);
+
+    return (
+        <div className={styles.app}>
+            {isQuizCompleted ? <ResultSection /> : <QuestionSection onComplete={() => setIsQuizCompleted(true)} />}
+        </div>
+    );
 }
-
-export default App;
