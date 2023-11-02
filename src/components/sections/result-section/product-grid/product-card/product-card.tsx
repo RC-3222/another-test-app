@@ -1,4 +1,4 @@
-import { Product } from "../../../../types"
+import { Product } from "../../../../../types"
 
 import styles from './product-card.module.scss'
 

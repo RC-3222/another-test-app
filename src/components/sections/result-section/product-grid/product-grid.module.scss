@@ -1,14 +1,16 @@
+$card-width: min(15rem, 90vw);
+
 .grid {
     width: 100%;
     display: grid;
 
-    grid-template-columns: repeat(auto-fill, 15rem);
+    grid-template-columns: repeat(auto-fill, min(15rem, 90vw));
 
-    row-gap: 35px;
-    column-gap: 35px;
+    row-gap: 2.1875rem;
+    column-gap: min(2.1875rem, 4vw);
 
     place-items: center;
     place-content: center;
 
-    margin-top: 66px;
+    margin-top: 4.125rem;
 }

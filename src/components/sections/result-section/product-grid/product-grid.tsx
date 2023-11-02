@@ -1,5 +1,5 @@
 import { Product } from "../../../../types"
-import { ProductCard } from "../product-card"
+import { ProductCard } from "./product-card"
 
 import styles from './product-grid.module.scss'
 

@@ -2,14 +2,13 @@ import { useEffect, useState } from "react"
 import { Product } from "../../../types"
 import { Header } from "../../common/header"
 import { ProductGrid } from "./product-grid"
+import { fetchProducts } from "../../../utils"
 
 export const ResultSection = () => {
     const [products, setProducts] = useState<Product[]>([])
 
     const loadProducts = async () => {
-        const res = await fetch('./data/products.json')
-
-        const data = await res.json()
+        const data = await fetchProducts();
 
         setProducts(data)
     }
@@ -20,6 +19,6 @@ export const ResultSection = () => {
 
     return <>
         <Header title='Результат' description='Мы подобрали для вас наиболее подходящие средства' />
-        {products.length && <ProductGrid products={products} />}
+        {!!products.length && <ProductGrid products={products} />}
     </>
 }

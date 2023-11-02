@@ -2,7 +2,9 @@ import { useState } from 'react';
 import styles from './app.module.scss';
 
 import { ResultSection } from './components/sections/result-section';
-import { QuestionSection } from './components/sections/question-section';
+import { QuizSection } from './components/sections/quiz-section';
+
+import { questions } from './data/questions';
 
 export const App = () => {
 
@@ -10,7 +12,7 @@ export const App = () => {
 
     return (
         <div className={styles.app}>
-            {isQuizCompleted ? <ResultSection /> : <QuestionSection onComplete={() => setIsQuizCompleted(true)} />}
+            {isQuizCompleted ? <ResultSection /> : <QuizSection questions={questions} onComplete={() => setIsQuizCompleted(true)} />}
         </div>
     );
 }

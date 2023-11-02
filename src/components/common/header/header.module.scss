@@ -1,31 +1,29 @@
+@use '../../../scss/mixins' as *;
 
 .header {
     display: flex;
 
-    gap: 2.125rem;
+    gap: min(2.125rem, 8.5vw);
 
     align-items: start;
     justify-content: center;
 
     flex-direction: column;
 
-    & > * {
+    &>* {
         margin: 0;
     }
 
     &__title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        line-height: 3rem;
-        
-        letter-spacing: 0em;
+        @include fonts(min(2.5rem, 10vw), 700, min(3rem, 12vw));
     }
 
     &__description {
-        font-size: 1.25rem;
-        font-weight: 400;
-        line-height: 1.5rem;
+        @include fonts(min(1.25rem, 5vw), 400, min(1.5rem, 6vw));
+    }
 
-        letter-spacing: 0em;
+    @media (max-width: 1280px) {
+        align-items: center;
+        text-align: center;
     }
 }

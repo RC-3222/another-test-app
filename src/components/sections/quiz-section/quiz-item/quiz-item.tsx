@@ -1,18 +1,18 @@
-import { Question as QuestionType } from '../../../../types';
+import { Question } from '../../../../types';
 import { RadioButton } from '../../../common/radio-button';
-import styles from './question.module.scss';
+import styles from './quiz-item.module.scss';
 
-type QuestionProps = {
-    question: QuestionType;
+type QuizItemProps = {
+    question: Question;
     updateAnswer: (questionId: string, newVal:string) => void;
     selectedOption: string | null;
 }
 
-export const Question = ({question, updateAnswer, selectedOption}: QuestionProps) => {
+export const QuizItem = ({question, updateAnswer, selectedOption}: QuizItemProps) => {
 
-    return <div className={styles.question}>
-        <h2 className={styles.question__title}>{question.title}</h2>
-        <div className={styles.question__answerSelector}>
+    return <div className={styles.quizItem}>
+        <h2 className={styles.quizItem__title}>{question.title}</h2>
+        <div className={styles.quizItem__answerSelector}>
             {question.options.map((item)=>
                 <RadioButton
                     onChange={() => updateAnswer(question.id, item)}

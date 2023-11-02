@@ -1,0 +1,37 @@
+@use '../../../scss/mixins' as *;
+@use '../../../scss/colors' as *;
+
+.quizSection {
+    margin-top: 2.125rem;
+
+    background-color: $clr-blue--100;
+
+    width: min(54.25rem, 100%);
+
+    padding: 2.125rem 2.125rem 4rem 2.125rem;
+
+    min-height: 27rem;
+
+    border-radius: 0.625rem;
+
+    display: flex;
+    flex-direction: column;
+
+    &__buttons {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 0.625rem;
+
+        margin-top: auto;
+    }
+
+    &__message {
+        margin-top: 1.5rem;
+
+        @include fonts(0.9375rem, 400, 1.125rem);
+        
+        color: $clr-grey--400;
+    }
+}

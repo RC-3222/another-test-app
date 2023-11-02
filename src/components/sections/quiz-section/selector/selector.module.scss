@@ -1,3 +1,6 @@
+@use '../../../../scss/mixins' as *;
+@use '../../../../scss/colors' as *;
+
 .selector {
     display: flex;
     flex-direction: column;
@@ -6,12 +9,14 @@
     &__items {
         display: flex;
         gap: 0.625rem;
+
+        flex-wrap: wrap;
     }
 
     &__item {
         width: 1.25rem;
         height: 1.25rem;
-        background-color: #89D1F8;
+        background-color: $clr-blue--200;
 
         border: none;
 
@@ -27,20 +32,18 @@
         }
 
         &:focus-visible {
-            outline: 2px solid #00A5FF;
+            outline: 2px solid $clr-blue--300;
             outline-offset: 1px;
         }
 
         &_selected {
-            background-color: #00A5FF;
+            background-color: $clr-blue--300;
         }
     }
 
     &__info {
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 18px;
-        letter-spacing: 0em;
-        color: #9A9A9A;
+        @include fonts(0.9375rem, 400, 1.125rem);
+
+        color: $clr-grey--400;
     }
 }

@@ -1,33 +1,35 @@
+@use '../../../scss/colors' as *;
+@use '../../../scss/mixins' as *;
+
 .radioButton {
     -webkit-appearance: none;
     appearance: none;
-    background-color: #FFFFFF;
+    background-color: $clr-white;
     margin: 0;
 
     font: inherit;
     
-    color: #00A5FF;
-    width: 15px;
-    height: 15px;
-    border: 1px solid #9A9A9A;
+    color: $clr-blue--300;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border: 1px solid $clr-grey--400;
     border-radius: 50%;
-
 
     display: grid;
     place-content: center;
 
     &::before {
         content: "";
-        width: 15px;
-        height: 15px;
+        width: 0.9375rem;
+        height: 0.9375rem;
         border-radius: 50%;
         transform: scale(0);
         transition: all ease-in-out 0.18s;
-        box-shadow: inset 14px 14px #00A5FF;
+        box-shadow: inset 0.875rem 0.875rem $clr-blue--300;
     }
 
     &:focus-visible {
-        outline: 2px solid #00A5FF;
+        outline: 2px solid $clr-blue--300;
         outline-offset: 2px;
     }
 
@@ -42,20 +44,10 @@
     &__label {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 0.625rem;
+
         cursor: pointer;
 
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 18px;
-        letter-spacing: 0em;
-        text-align: left;
-    }
-
-
-    &__wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include fonts(0.9375rem, 400, 1.125rem);
     }
 }

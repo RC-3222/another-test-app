@@ -1,25 +1,22 @@
-.question {
+@use '../../../../scss/mixins' as *;
+
+.quizItem {
     display: flex;
     gap: 2rem;
     flex-direction: column;
 
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin: 2rem 0;
 
     &__title {
         margin: 0;
         padding: 0;
         
-        font-size: 1.25rem;
-        font-weight: 700;
-        line-height: 1.5rem;
-        letter-spacing: 0em;
-        text-align: left;
+        @include fonts(1.25rem, 700, 1.5rem);
     }
 
     &__answerSelector {
         display: flex;
-        gap: 15px;
+        gap: 0.9375rem;
         flex-direction: column;
     }
 }
